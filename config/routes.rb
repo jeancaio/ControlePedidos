@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :clientes
   root 'home#index'
 
   devise_for :usuarios
