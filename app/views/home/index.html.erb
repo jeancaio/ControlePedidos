@@ -1,0 +1,7 @@
+<div
+  <% if usuario_signed_in? %>
+   <p> Olá  <%= current_usuario.email %>! <p/>
+  <% end %>
+</div>
+
+<%= link_to "Sair", destroy_usuario_session_path, method: :delete %>

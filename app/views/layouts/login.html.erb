@@ -1,22 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Controle Pedido</title>
+    <title>ControlePedido</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
   </head>
 
   <body>
-    <header>
-      <% if usuario_signed_in? %>
-        <%= render 'layouts/nav_bar_user' %>
-      <% end %>
-      
-    </header>
+    <div class="container">
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+      <%= yield %>
+    </div>
   </body>
 </html>
