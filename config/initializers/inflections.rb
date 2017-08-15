@@ -13,5 +13,5 @@
 # These inflection rules are supported but not enabled by default:
 ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.irregular 'produto', 'produtos'
-  inflect.irregular 'itemPedido', 'itensPedido'
+  inflect.irregular 'item_pedido', 'itens_pedido'
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170815180214) do
+ActiveRecord::Schema.define(version: 20170815182629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,13 +48,13 @@ ActiveRecord::Schema.define(version: 20170815180214) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "item_pedidos", force: :cascade do |t|
+  create_table "itens_pedido", force: :cascade do |t|
     t.bigint "produto_id"
     t.bigint "pedido_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["pedido_id"], name: "index_item_pedidos_on_pedido_id"
-    t.index ["produto_id"], name: "index_item_pedidos_on_produto_id"
+    t.index ["pedido_id"], name: "index_itens_pedido_on_pedido_id"
+    t.index ["produto_id"], name: "index_itens_pedido_on_produto_id"
   end
 
   create_table "pedidos", force: :cascade do |t|
@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 20170815180214) do
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "item_pedidos", "pedidos"
-  add_foreign_key "item_pedidos", "produtos"
+  add_foreign_key "itens_pedido", "pedidos"
+  add_foreign_key "itens_pedido", "produtos"
   add_foreign_key "pedidos", "clientes"
 end
