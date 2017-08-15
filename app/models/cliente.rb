@@ -1,3 +1,3 @@
 class Cliente < ApplicationRecord
-  validates_presence_of :nome, :cpf, :endereco, :cidade, :uf, :fone 
+  validates :nome, :cpf, :endereco, :cidade, :uf, :fone, presence: true
 end

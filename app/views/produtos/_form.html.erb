@@ -1,0 +1,14 @@
+<%= simple_form_for(@produto) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :descricao %>
+    <%= f.input :preco %>
+    <%= f.input :ativo %>
+    <%= f.input :estoque %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

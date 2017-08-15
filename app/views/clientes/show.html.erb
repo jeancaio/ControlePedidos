@@ -1,34 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @cliente.nome %>
-</p>
+  <p>
+    <strong>Nome:</strong>
+    <%= @cliente.nome %>
+  </p>
 
-<p>
-  <strong>Cpf:</strong>
-  <%= @cliente.cpf %>
-</p>
+  <p>
+    <strong>Cpf:</strong>
+    <%= @cliente.cpf %>
+  </p>
 
-<p>
-  <strong>Endereco:</strong>
-  <%= @cliente.endereco %>
-</p>
+  <p>
+    <strong>Endereco:</strong>
+    <%= @cliente.endereco %>
+  </p>
 
-<p>
-  <strong>Cidade:</strong>
-  <%= @cliente.cidade %>
-</p>
+  <p>
+    <strong>Cidade:</strong>
+    <%= @cliente.cidade %>
+  </p>
 
-<p>
-  <strong>Uf:</strong>
-  <%= @cliente.uf %>
-</p>
+  <p>
+    <strong>Uf:</strong>
+    <%= @cliente.uf %>
+  </p>
 
-<p>
-  <strong>Fone:</strong>
-  <%= @cliente.fone %>
-</p>
+  <p>
+    <strong>Fone:</strong>
+    <%= @cliente.fone %>
+  </p>
 
-<%= link_to 'Edit', edit_cliente_path(@cliente) %> |
-<%= link_to 'Back', clientes_path %>
+  <div class="btn-group" >
+    <button type="button" class="btn btn-default">
+      <%= link_to 'Edit', edit_cliente_path(@cliente) %> </button>
+    <button type="button" class="btn btn-default">
+      <%= link_to 'Back', clientes_path %> </button>
+</div>
