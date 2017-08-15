@@ -6,9 +6,9 @@
   <table class="table">
     <thead>
       <tr>
+        <th>Código</th>
         <th>Descricao</th>
         <th>Preco</th>
-        <th>Ativo</th>
         <th>Estoque</th>
         <th colspan="3"></th>
       </tr>
@@ -17,9 +17,9 @@
     <tbody>
       <% @produtos.each do |produto| %>
         <tr>
+          <td><%= produto.id %></td>
           <td><%= produto.descricao %></td>
           <td><%= produto.preco %></td>
-          <td><%= produto.ativo %></td>
           <td><%= produto.estoque %></td>
           <td><%= link_to 'Show', produto %></td>
           <td><%= link_to 'Edit', edit_produto_path(produto) %></td>
@@ -27,6 +27,7 @@
         </tr>
       <% end %>
     </tbody>
+      <%= will_paginate @produtos, renderer: BootstrapPagination::Rails  %>
   </table>
 
   <br>

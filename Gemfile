@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'bootstrap-sass'

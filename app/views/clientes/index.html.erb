@@ -32,6 +32,7 @@
         </tr>
       <% end %>
     </tbody>
+    <%= will_paginate @clientes, renderer: BootstrapPagination::Rails  %>
   </table>
 
   <br>
