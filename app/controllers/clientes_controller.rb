@@ -39,7 +39,7 @@ class ClientesController < ApplicationController
 
   # PATCH/PUT /clientes/1
   # PATCH/PUT /clientes/1.json
-  def update
+  def updateall
     respond_to do |format|
       if @cliente.update(cliente_params)
         format.html { redirect_to @cliente, notice: 'Cliente was successfully updated.' }
