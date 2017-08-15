@@ -1,24 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Descricao:</strong>
-  <%= @produto.descricao %>
-</p>
+  <p>
+    <strong>Descricao:</strong>
+    <%= @produto.descricao %>
+  </p>
 
-<p>
-  <strong>Preco:</strong>
-  <%= @produto.preco %>
-</p>
+  <p>
+    <strong>Preco:</strong>
+    <%= @produto.preco %>
+  </p>
 
-<p>
-  <strong>Ativo:</strong>
-  <%= @produto.ativo %>
-</p>
+  <p>
+    <strong>Ativo:</strong>
+    <%= @produto.ativo %>
+  </p>
 
-<p>
-  <strong>Estoque:</strong>
-  <%= @produto.estoque %>
-</p>
+  <p>
+    <strong>Estoque:</strong>
+    <%= @produto.estoque %>
+  </p>
 
-<%= link_to 'Edit', edit_produto_path(@produto) %> |
-<%= link_to 'Back', produtos_path %>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default">
+      <%= link_to 'Edit', edit_produto_path(@produto) %> </button>
+    <button type="button" class="btn btn-default">
+      <%= link_to 'Back', produtos_path %></button>
+  </div>
+</div>

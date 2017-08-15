@@ -1,33 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<h1>Produtos</h1>
+  <h1>Produtos</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Descricao</th>
-      <th>Preco</th>
-      <th>Ativo</th>
-      <th>Estoque</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @produtos.each do |produto| %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= produto.descricao %></td>
-        <td><%= produto.preco %></td>
-        <td><%= produto.ativo %></td>
-        <td><%= produto.estoque %></td>
-        <td><%= link_to 'Show', produto %></td>
-        <td><%= link_to 'Edit', edit_produto_path(produto) %></td>
-        <td><%= link_to 'Destroy', produto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Descricao</th>
+        <th>Preco</th>
+        <th>Ativo</th>
+        <th>Estoque</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @produtos.each do |produto| %>
+        <tr>
+          <td><%= produto.descricao %></td>
+          <td><%= produto.preco %></td>
+          <td><%= produto.ativo %></td>
+          <td><%= produto.estoque %></td>
+          <td><%= link_to 'Show', produto %></td>
+          <td><%= link_to 'Edit', edit_produto_path(produto) %></td>
+          <td><%= link_to 'Destroy', produto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Produto', new_produto_path %>
+  <br>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default">
+      <%= link_to 'Voltar', :back %></button>
+    <button type="button" class="btn btn-default">
+      <%= link_to 'New Produto', new_produto_path %></button>
+  </div>
+</div>

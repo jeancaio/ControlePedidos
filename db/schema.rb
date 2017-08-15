@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20170815124501) do
   create_table "produtos", force: :cascade do |t|
     t.string "descricao"
     t.decimal "preco"
-    t.boolean "ativo"
+    t.boolean "ativo", default: true
     t.integer "estoque"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

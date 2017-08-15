@@ -1,6 +1,12 @@
-<h1>Editing Produto</h1>
+<div class="container">
+  <h1>Editing Produto</h1>
 
-<%= render 'form', produto: @produto %>
+  <%= render 'form', produto: @produto %>
 
-<%= link_to 'Show', @produto %> |
-<%= link_to 'Back', produtos_path %>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default">
+      <%= link_to 'Show', @produto %> </button>
+    <button type="button" class="btn btn-default">
+      <%= link_to 'Back', produtos_path %></button>
+  </div>
+</div>
