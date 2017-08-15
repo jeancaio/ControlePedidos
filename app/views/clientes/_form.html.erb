@@ -2,12 +2,25 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :nome %>
-    <%= f.input :cpf %>
-    <%= f.input :endereco %>
-    <%= f.input :cidade %>
-    <%= f.input :uf %>
-    <%= f.input :fone %>
+    <div class="row">
+      <div class="col-md-8">
+        <%= f.input :nome %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :cpf %>
+      </div>
+      <div class="col-md-7">
+        <%= f.input :endereco %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :cidade %>
+      </div>
+      <div class="col-md-1">
+        <%= f.input :uf %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :fone %>
+      </div>
   </div>
 
   <div class="form-actions">
