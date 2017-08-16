@@ -20,7 +20,9 @@
     <strong>Estoque:</strong>
     <%= @produto.estoque %>
   </p>
-
+  <p>
+    <%= image_tag @produto.image.url(:medium) %>
+  </p>
   <div class="btn-group">
     <button type="button" class="btn btn-default">
       <%= link_to 'Edit', edit_produto_path(@produto) %> </button>

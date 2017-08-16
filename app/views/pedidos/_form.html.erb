@@ -3,13 +3,9 @@
 
   <div class="form-inputs">
     <%= f.association :cliente %>
-    <%#= debugger %>
     <%= f.simple_fields_for :itens_pedido do |ff| %>
-      <%= ff.association :produto %>
-      <%= link_to_remove_association "remove task", ff %>
-
-      <%#= render 'campos_itens_pedido', f: ff %>
-      <%= link_to_add_association 'add task', ff, :itens_pedido %>
+      <%= render 'campos_itens_pedido', f: ff %>
+      <%#= link_to_add_association 'add task', ff, :itens_pedido %>
     <% end %>
   </div>
 
