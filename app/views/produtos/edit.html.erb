@@ -4,9 +4,7 @@
   <%= render 'form', produto: @produto %>
 
   <div class="btn-group">
-    <button type="button" class="btn btn-default">
-      <%= link_to 'Show', @produto %> </button>
-    <button type="button" class="btn btn-default">
-      <%= link_to 'Back', produtos_path %></button>
+    <%= link_to 'Show', @produto, :class => "btn btn-default" %> 
+    <%= link_to 'Back', produtos_path, :class => "btn btn-default" %>
   </div>
 </div>

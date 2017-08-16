@@ -4,8 +4,6 @@
   <%= render 'form', cliente: @cliente %>
 
   <div class="btn-group">
-    <button type="button" class="btn btn-default">
-      <%= link_to 'Show', @cliente %></button>
-    <button type="button" class="btn btn-default">
-      <%= link_to 'Back', clientes_path %></button>
+      <%= link_to 'Show', @cliente, :class =>"btn btn-default" %>
+      <%= link_to 'Back', clientes_path, :class =>"btn btn-default"%>
 </div>

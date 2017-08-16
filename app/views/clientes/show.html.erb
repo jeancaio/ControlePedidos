@@ -32,8 +32,7 @@
   </p>
 
   <div class="btn-group" >
-    <button type="button" class="btn btn-default">
-      <%= link_to 'Edit', edit_cliente_path(@cliente) %> </button>
-    <button type="button" class="btn btn-default">
-      <%= link_to 'Back', clientes_path %> </button>
+      <%= link_to 'Edit', edit_cliente_path(@cliente), :class => "btn btn-default" %>
+      <%= link_to 'Back', clientes_path, :class => "btn btn-default" %>
+  </div>
 </div>

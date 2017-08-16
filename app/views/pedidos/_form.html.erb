@@ -4,14 +4,13 @@
   <div class="form-inputs">
     <%= f.association :cliente %>
     <%= f.simple_fields_for :itens_pedido do |ff| %>
-      <%= render 'campos_itens_pedido', f: ff %>
-      <%#= link_to_add_association 'add task', ff, :itens_pedido %>
+      <%= render 'item_pedido_fields', f: ff %>
     <% end %>
   </div>
-
+  <div class="form-actions">
+    <%= link_to_add_association 'Adicinar produto', f, :itens_pedido, :class => "btn btn-default"%>
+  </div>
   <div class="form-actions">
     <%= f.button :submit %>
-    <!-- <button type="button" class="btn btn-default">
-      <%= link_to 'seguir', cocoon_pedidos_path %> </button> -->
   </div>
 <% end %>

@@ -21,9 +21,9 @@
           <td><%= produto.descricao %></td>
           <td><%= produto.preco %></td>
           <td><%= produto.estoque %></td>
-          <td><%= link_to 'Show', produto %></td>
-          <td><%= link_to 'Edit', edit_produto_path(produto) %></td>
-          <td><%= link_to 'Destroy', produto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Show', produto,:class => "btn btn-default btn-xs" %></td>
+          <td><%= link_to 'Edit', edit_produto_path(produto), :class => "btn btn-default btn-xs" %></td>
+          <td><%= link_to 'Destroy', produto, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default btn-xs" %></td>
         </tr>
       <% end %>
     </tbody>
@@ -34,9 +34,7 @@
 
   <br>
   <div class="btn-group">
-    <button type="button" class="btn btn-default">
-      <%= link_to 'Voltar', root_path %></button>
-    <button type="button" class="btn btn-default">
-      <%= link_to 'New Produto', new_produto_path %></button>
+    <%= link_to 'Voltar', root_path,:class => "btn btn-default" %>
+    <%= link_to 'New Produto', new_produto_path, :class => "btn btn-default" %>
   </div>
 </div>

@@ -1,15 +1,10 @@
 <nav class="navbar navbar-inverse" >
   <div class="container">
     <h2><%= link_to 'Controle de Pedidos', root_path %>
-    <button type="button" class="btn btn-default navbar-btn">
-            <%= link_to "Pedidos", pedidos_path %></button>
-    <button type="button" class="btn btn-default navbar-btn">
-            <%= link_to "Produtos", produtos_path %></button>
-    <button type="button" class="btn btn-default navbar-btn">
-            <%= link_to "Clientes", clientes_path %> </button>
-    <button type="button" class="btn btn-default navbar-btn">
-    <%= link_to "Logout", destroy_usuario_session_path,
-              method: :delete %> </button
-
+        <%= link_to "Pedidos", pedidos_path, :class =>"btn btn-default"%>
+        <%= link_to "Produtos", produtos_path, :class =>"btn btn-default" %></button>
+        <%= link_to "Clientes", clientes_path, :class =>"btn btn-default" %> </button>
+        <%= link_to "Logout", destroy_usuario_session_path,
+              method: :delete, :class =>"btn btn-default" %>
   </div>
 </nav>
