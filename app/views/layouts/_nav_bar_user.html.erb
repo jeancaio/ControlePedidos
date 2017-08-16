@@ -2,7 +2,7 @@
   <div class="container">
     <h2>Controle de Pedidos
     <button type="button" class="btn btn-default navbar-btn">
-                  Pedidos </button>
+            <%= link_to "Pedidos", pedidos_path %></button>
     <button type="button" class="btn btn-default navbar-btn">
             <%= link_to "Produtos", produtos_path %></button>
     <button type="button" class="btn btn-default navbar-btn">
@@ -10,6 +10,6 @@
     <button type="button" class="btn btn-default navbar-btn">
     <%= link_to "Logout", destroy_usuario_session_path,
               method: :delete %> </button
-    
+
   </div>
 </nav>

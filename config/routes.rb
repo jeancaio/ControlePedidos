@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :pedidos
+  resources :pedidos do
+    get :cocoon, on: :collection                             
+  end
   resources :produtos
   resources :clientes
   root 'home#index'
