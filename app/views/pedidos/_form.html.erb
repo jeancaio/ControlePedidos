@@ -3,12 +3,15 @@
 
   <div class="form-inputs">
     <%= f.association :cliente %>
+    <hr/>
     <%= f.simple_fields_for :itens_pedido do |ff| %>
       <%= render 'item_pedido_fields', f: ff %>
     <% end %>
   </div>
+
   <div class="form-actions">
-    <%= link_to_add_association 'Adicinar produto', f, :itens_pedido, :class => "btn btn-default"%>
+    <hr/>
+    <%= link_to_add_association 'Adicionar produto', f, :itens_pedido, :class => "btn btn-default"%>
   </div>
   <div class="form-actions">
     <%= f.button :submit %>

@@ -26,20 +26,39 @@
           <td><%= cliente.cidade %></td>
           <td><%= cliente.uf %></td>
           <td><%= cliente.fone %></td>
-          <td><%= link_to 'Show', cliente,:class => "btn btn-default btn-xs"%></td>
-          <td><%= link_to 'Edit', edit_cliente_path(cliente), :class => "btn btn-default btn-xs" %></td>
-          <td><%= link_to 'Destroy', cliente, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default btn-xs" %></td>
+
+          <td>
+            <%= link_to cliente,:class => "btn btn-primary btn-xs" do%>
+              <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+            <% end %>
+          </td>
+
+          <td>
+            <%= link_to edit_cliente_path(cliente), :class => "btn btn-primary btn-xs" do %>
+              <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+            <% end %>
+          </td>
+
+          <td>
+            <%= link_to cliente, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs" do %>
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+          <% end %>
+          </td>
+
         </tr>
       <% end %>
     </tbody>
-    <%= will_paginate @clientes, renderer: BootstrapPagination::Rails  %>
+
+    <div class="navbar navbar-right">
+      <%= will_paginate @clientes, renderer: BootstrapPagination::Rails  %>
+    </div>
   </table>
 
   <br>
 
   <div class="btn-group" >
-      <%= link_to 'Voltar', root_path, :class => "btn btn-default"  %>
-      <%= link_to 'New Cliente', new_cliente_path, :class => "btn btn-default" %>
+      <%= link_to 'Voltar', root_path, :class => "btn btn-primary"  %>
+      <%= link_to 'New Cliente', new_cliente_path, :class => "btn btn-success" %>
   </div>
 
 </div>

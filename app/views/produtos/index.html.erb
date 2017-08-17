@@ -6,6 +6,7 @@
   <table class="table">
     <thead>
       <tr>
+        <th>Imagem</th>
         <th>Código</th>
         <th>Descricao</th>
         <th>Preco</th>
@@ -17,13 +18,30 @@
     <tbody>
       <% @produtos.each do |produto| %>
         <tr>
+          <td><%= image_tag produto.image.url(:thumb)  %></td>
           <td><%= produto.id %></td>
           <td><%= produto.descricao %></td>
           <td><%= produto.preco %></td>
           <td><%= produto.estoque %></td>
-          <td><%= link_to 'Show', produto,:class => "btn btn-default btn-xs" %></td>
-          <td><%= link_to 'Edit', edit_produto_path(produto), :class => "btn btn-default btn-xs" %></td>
-          <td><%= link_to 'Destroy', produto, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default btn-xs" %></td>
+
+          <td>
+            <%= link_to produto, :class => "btn btn-primary btn-xs" do %>
+              <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+            <% end %>
+          </td>
+
+          <td>
+            <%= link_to edit_produto_path(produto), :class => "btn btn-primary btn-xs" do %>
+              <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+            <% end %>
+          </td>
+
+          <td>
+            <%= link_to produto, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs" do %>
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            <% end %>
+          </td>
+
         </tr>
       <% end %>
     </tbody>
@@ -34,7 +52,7 @@
 
   <br>
   <div class="btn-group">
-    <%= link_to 'Voltar', root_path,:class => "btn btn-default" %>
-    <%= link_to 'New Produto', new_produto_path, :class => "btn btn-default" %>
+    <%= link_to 'Voltar', root_path,:class => "btn btn-primary" %>
+    <%= link_to 'New Produto', new_produto_path, :class => "btn btn-success" %>
   </div>
 </div>

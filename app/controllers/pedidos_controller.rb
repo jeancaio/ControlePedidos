@@ -41,8 +41,11 @@ class PedidosController < ApplicationController
   # PATCH/PUT /pedidos/1
   # PATCH/PUT /pedidos/1.json
   def update
+
     respond_to do |format|
+      debugger
       if @pedido.update(pedido_params)
+        @pedido.itens_pedido.build
         format.html { redirect_to @pedido, notice: 'Pedido was successfully updated.' }
         format.json { render :show, status: :ok, location: @pedido }
       else

@@ -1,10 +1,51 @@
 <nav class="navbar navbar-inverse" >
   <div class="container">
-    <h2><%= link_to 'Controle de Pedidos', root_path %>
-        <%= link_to "Pedidos", pedidos_path, :class =>"btn btn-default"%>
-        <%= link_to "Produtos", produtos_path, :class =>"btn btn-default" %></button>
-        <%= link_to "Clientes", clientes_path, :class =>"btn btn-default" %> </button>
-        <%= link_to "Logout", destroy_usuario_session_path,
-              method: :delete, :class =>"btn btn-default" %>
-  </div>
+
+    <ul class="nav navbar-nav">
+
+      <li>
+        <a>
+          <%= link_to root_path do %>
+            <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Controle de Pedidos
+          <% end %>
+        </a>
+      </li>
+
+      <li>
+        <a>
+          <%= link_to pedidos_path do %>
+            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Pedidos
+          <% end %>
+        </a>
+      </li>
+
+      <li>
+        <a>
+          <%= link_to produtos_path do %>
+            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Produtos
+          <% end %>
+        </a>
+      </li>
+
+      <li>
+        <a>
+          <%= link_to clientes_path do %>
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Clientes
+          <% end %>
+        </a>
+      </li>
+
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+
+      <li>
+        <a>
+          <%= link_to destroy_usuario_session_path, method: :delete do %>
+            <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout
+          <% end %>
+        </a>
+      </li>
+
+    </ul>
 </nav>
