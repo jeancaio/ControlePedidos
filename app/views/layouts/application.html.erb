@@ -14,9 +14,9 @@
       <% if usuario_signed_in? %>
         <%= render 'layouts/nav_bar_user' %>
       <% end %>
-      
+
     </header>
-    <p class="alert"><%= alert %></p>
+    <p class="notice"><%= notice %></p>
     <%= yield %>
   </body>
 </html>

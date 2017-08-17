@@ -3,19 +3,24 @@
 
   <div class="form-inputs">
     <%= f.input :descricao %>
+
     <div class="row">
       <div class="col-md-6">
         <%= f.input :preco %>
       </div>
+
       <div class="col-md-6">
         <%= f.input :estoque %>
       </div>
-    <div>
-    <%= f.input :image, as: :file %>
-    <%= f.input :ativo %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+      <div class="col-md-6">
+      <%= f.input :image, as: :file %>
+      <%= f.input :ativo %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, :class => "btn-success"%>
   </div>
+  <br>
 <% end %>

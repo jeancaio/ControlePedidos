@@ -40,7 +40,6 @@ gem 'bootstrap-sass'
 gem 'paperclip'
 gem 'audited'
 gem 'select2-rails'
-
 gem "cocoon"
 
 group :development, :test do
