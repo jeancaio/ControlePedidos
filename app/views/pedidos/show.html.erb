@@ -3,9 +3,33 @@
 
   <p>
     <strong>Cliente:</strong>
-    <%= @pedido.cliente %>
+      <%= @pedido.cliente %>
   </p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Imagem</th>
+        <th>Código</th>
+        <th>Produtos</th>
 
-  <%= link_to 'Edit', edit_pedido_path(@pedido) %> |
-  <%= link_to 'Back', pedidos_path %>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @pedido.itens_pedido.each do |item_pedido| %>
+        <tr>
+          <td><%= image_tag item_pedido.produto.image.url(:thumb)  %></td>
+          <td><%= item_pedido.produto.id %></td>
+          <td><%= item_pedido.produto.descricao%></td>
+
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+  <div class="btn-group">
+    <%= link_to 'Editar', edit_pedido_path(@pedido), :class => "btn btn-primary"  %> 
+    <%= link_to 'Voltar', pedidos_path, :class => "btn btn-primary"  %>
+  </div>
 </div>

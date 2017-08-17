@@ -4,7 +4,7 @@ class PedidosController < ApplicationController
   # GET /pedidos
   # GET /pedidos.json
   def index
-    @pedidos = Pedido.all
+    @pedidos = Pedido.paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /pedidos/1
@@ -26,7 +26,6 @@ class PedidosController < ApplicationController
   # POST /pedidos.json
   def create
     @pedido = Pedido.new(pedido_params)
-
     respond_to do |format|
       if @pedido.save
         format.html { redirect_to @pedido, notice: 'Pedido was successfully created.' }
@@ -41,9 +40,10 @@ class PedidosController < ApplicationController
   # PATCH/PUT /pedidos/1
   # PATCH/PUT /pedidos/1.json
   def update
+    @pedido.itens_pedido.destroy_all
     respond_to do |format|
       if @pedido.update(pedido_params)
-        @pedido.itens_pedido.build
+
         format.html { redirect_to @pedido, notice: 'Pedido was successfully updated.' }
         format.json { render :show, status: :ok, location: @pedido }
       else
@@ -72,6 +72,6 @@ class PedidosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pedido_params
-      params.require(:pedido).permit(:cliente_id)
+      params.require(:pedido).permit(:cliente_id, itens_pedido_attributes: [:produto_id, :_destroy])
     end
 end

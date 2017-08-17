@@ -4,6 +4,6 @@ class Cliente < ApplicationRecord
   validates :nome, :cpf, :endereco, :cidade, :uf, :fone, presence: true
 
   def to_s
-    "#{nome} - #{cpf}"
+    "#{nome}"
   end
 end
