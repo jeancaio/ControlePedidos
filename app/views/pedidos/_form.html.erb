@@ -1,17 +1,17 @@
 <%= simple_form_for(@pedido) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-inputs ">
     <%= f.association :cliente %>
     <hr/>
-    <%= f.simple_fields_for :itens_pedido do |ff| %>
-      <%= render 'item_pedido_fields', f: ff %>
+    <%= f.simple_fields_for :itens_pedido do |item_pedido| %>
+      <%= render 'item_pedido_fields', f: item_pedido %>
     <% end %>
   </div>
 
   <div class="form-actions">
     <hr/>
-    <%= link_to_add_association 'Adicionar produto', f, :itens_pedido, :class => "btn btn-success"%>
+    <%= link_to_add_association 'Adicionar produto', f, :itens_pedido, :class => "btn btn-success "%>
   </div>
 
   <div class="form-actions">

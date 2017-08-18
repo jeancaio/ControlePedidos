@@ -11,8 +11,8 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require select2
 //= require turbolinks
 //= require jquery/dist/jquery.min.js
+//= require select2
 //= require cocoon
 //= require_tree .
