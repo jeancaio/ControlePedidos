@@ -1,9 +1,10 @@
 <div class="row">
-  <div class="col-md-10">
+  <div class="col-md-10 ass-prod">
     <%= f.association :produto%>
   </div>
-  <div class="col-md-2">
-    <br>
-    <%= link_to_remove_association "Remover produto", f, :class => "btn btn-default"%>
+  <div class="col-md-2 ctn-bt-rmv-ass">
+
+    <label>&nbsp;</label>
+    <%= link_to_remove_association "Remover produto", f, :class => "btn btn-default bt-rmv-ass"%>
   </div>
 </div>
