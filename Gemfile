@@ -48,12 +48,9 @@ group :development, :test do
 
   gem 'wonder-ruby-style'
 
-end
-
-group :test do
+  gem 'ffaker'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'ffaker'
 end
 
 group :development do

@@ -1,3 +1,5 @@
+require 'ffaker'
+
 class ProdutosController < ApplicationController
   before_action :set_produto, only: [:show, :edit, :update, :destroy]
 
