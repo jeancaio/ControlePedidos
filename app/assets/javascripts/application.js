@@ -12,7 +12,6 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require jquery/dist/jquery.min.js
 //= require select2
 //= require cocoon
 //= require_tree .
