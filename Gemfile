@@ -42,6 +42,7 @@ gem 'audited'
 gem 'select2-rails'
 gem "cocoon"
 gem 'ransack'
+gem "gretel"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
