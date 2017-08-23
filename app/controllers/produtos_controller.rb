@@ -6,8 +6,8 @@ class ProdutosController < ApplicationController
   # GET /produtos
   # GET /produtos.json
   def index
-
-    @produtos = Produto.paginate(:page => params[:page], :per_page => 10)
+    @q = Produto.ransack(params[:q])
+    @produtos = @q.result.paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /produtos/1

@@ -4,7 +4,8 @@ class PedidosController < ApplicationController
   # GET /pedidos
   # GET /pedidos.json
   def index
-    @pedidos = Pedido.paginate(:page => params[:page], :per_page => 10)
+    @q = Pedido.ransack(params[:q])
+    @pedidos = @q.result.includes(:cliente).paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /pedidos/1

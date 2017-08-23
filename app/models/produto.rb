@@ -10,4 +10,19 @@ class Produto < ApplicationRecord
   def to_s
     "#{descricao}"
   end
+
+  scope :id_eq_or_descricao_cont, -> (query) do
+    id = query.to_i
+
+    if id > 0
+      where(id: id)
+    else
+      query = "%#{query.to_s.upcase}%"
+      where "descricao ILIKE '#{query}'"
+    end
+  end
+
+  def self.ransackable_scopes(_auth_object = nil)
+    [:id_eq_or_descricao_cont]
+  end
 end
