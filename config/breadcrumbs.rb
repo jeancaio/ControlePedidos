@@ -6,7 +6,44 @@ crumb :pedidos do
   link "Pedidos", pedidos_path
 end
 
-# crumb :projects do
+crumb :produtos do
+  link "Produtos", produtos_path
+end
+
+crumb :clientes do
+  link "Clientes", clientes_path
+end
+
+crumb :cliente do |cliente|
+  link cliente.nome, cliente
+  parent :clientes
+end
+
+crumb :new_cliente do
+  link "Novo Cliente", new_cliente_path
+  parent :clientes
+end
+
+crumb :produto do |produto|
+  link produto.descricao, produto
+  parent :produtos
+end
+
+crumb :new_produto do
+  link "Novo produto", new_produto_path
+  parent :produtos
+end
+
+crumb :pedido do |pedido|
+  link pedido.id, pedido
+  parent :pedidos
+end
+
+crumb :new_pedido do
+  link "Novo pedido", new_pedido_path
+  parent :pedidos
+end
+# crumb :projects
 #   link "Projects", projects_path
 # end
 

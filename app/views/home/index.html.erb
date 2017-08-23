@@ -1,4 +1,5 @@
-<div
+<div>
+  <% breadcrumb :root %>
   <% if usuario_signed_in? %>
    <p> Olá  <%= current_usuario.email %>! <p/>
   <% end %>

@@ -1,12 +1,12 @@
 <div class="container">
-  <% breadcrumb :pedido, @pedido %>
+  <% breadcrumb :pedidos %>
 
   <p id="notice"><%= notice %></p>
 
   <h1>Pedidos</h1>
 
     <%= search_form_for @q do |f| %>
-      <%= f.search_field :cliente_nome_or_cliente_cpf_cont, class: "form-inputs", placeholder: "Buscar cliente"%>
+      <%= f.search_field :id_eq_or_cliente_nome_or_cliente_cpf_cont, class: "form-inputs", placeholder: "Buscar cliente"%>
       <button  type="submit" class="btn btn-default btn-sm">
         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
       </button>
@@ -15,8 +15,9 @@
   <table class="table">
     <thead>
       <tr>
+        <th><%= sort_link @q, :id, "Código" %></th>
         <th><%= sort_link @q, :cliente_nome, "Cliente" %></th>
-        <th><%= sort_link @q, :cliente_cpf, "CPF" %></th
+        <th><%= sort_link @q, :cliente_cpf, "CPF" %></th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -24,6 +25,7 @@
     <tbody>
       <% @pedidos.each do |pedido| %>
         <tr>
+          <td><%= pedido.id %></td>
           <td><%= pedido.cliente %></td>
           <td><%= pedido.cliente.cpf %></td>
 

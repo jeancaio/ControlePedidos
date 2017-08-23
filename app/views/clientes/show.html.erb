@@ -1,5 +1,7 @@
 <div class="container">
 
+  <% breadcrumb :cliente, @cliente %>
+
   <% if @cliente.save %>
     <div class="alert alert-success" role="alert">
       <p id="notice"><%= notice %></p>
