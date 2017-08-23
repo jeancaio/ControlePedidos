@@ -20,19 +20,19 @@
 
           <td>
             <%= link_to pedido, :class => "btn btn-primary btn-xs" do %>
-              <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Detalhes
             <% end %>
           </td>
 
           <td>
             <%= link_to edit_pedido_path(pedido), :class => "btn btn-primary btn-xs" do %>
-              <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
             <% end %>
           </td>
 
           <td>
             <%= link_to pedido, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs" do %>
-              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Excluir
             <% end %>
           </td>
 
@@ -48,9 +48,11 @@
 
   <br>
 
-  <div class="btn-group">
+  <div >
     <%= link_to 'Voltar', root_path,:class => "btn btn-primary" %>
-    <%= link_to 'Novo Pedido', new_pedido_path, :class => "btn btn-success" %>
+    <div class="pull-right">
+      <%= link_to 'Novo Pedido', new_pedido_path, :class => "btn btn-success" %>
+    </div>
   </div>
 
 </div>

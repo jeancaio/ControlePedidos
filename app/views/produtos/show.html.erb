@@ -2,12 +2,12 @@
   <p id="notice"><%= notice %></p>
 
   <p>
-    <strong>Descricao:</strong>
+    <strong>Descrição:</strong>
     <%= @produto.descricao %>
   </p>
 
   <p>
-    <strong>Preco:</strong>
+    <strong>Preço:</strong>
     <%= @produto.preco %>
   </p>
 
@@ -23,8 +23,8 @@
   <p>
     <%= image_tag @produto.image.url(:medium) %>
   </p>
-  <div class="btn-group">
-    <%= link_to 'Editar', edit_produto_path(@produto), :class => "btn btn-primary" %>
+  <div>
     <%= link_to 'Voltar', produtos_path, :class => "btn btn-primary" %>
+    <%= link_to 'Editar', edit_produto_path(@produto), :class => "btn btn-success" %>
   </div>
 </div>

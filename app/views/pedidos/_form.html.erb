@@ -10,13 +10,13 @@
   </div>
 
   <div class="form-actions">
-    <hr/>
     <%= link_to_add_association 'Adicionar produto', f, :itens_pedido, :class => "btn btn-success "%>
+    <hr/>
   </div>
 
   <div class="form-actions">
-    <br>
-    <%= f.button :submit, :class => "btn-success"  %>
+      <div class="pull-right">
+        <%= f.button :submit, :class => "btn-success"  %>
+      </div>
   </div>
-  <br>
 <% end %>

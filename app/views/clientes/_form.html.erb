@@ -7,16 +7,16 @@
         <%= f.input :nome %>
       </div>
       <div class="col-md-4">
-        <%= f.input :cpf %>
+        <%= f.input :cpf , label: 'CPF' %>
       </div>
       <div class="col-md-7">
-        <%= f.input :endereco %>
+        <%= f.input :endereco,label: 'Endereço' %>
       </div>
       <div class="col-md-4">
         <%= f.input :cidade %>
       </div>
       <div class="col-md-1">
-        <%= f.input :uf %>
+        <%= f.input :uf, label: 'UF' %>
       </div>
       <div class="col-md-6">
         <%= f.input :fone %>
@@ -24,7 +24,9 @@
   </div>
 
   <div class="form-actions">
+      <div class="pull-right">
     <%= f.button :submit, :class => "btn-success" %>
-  </div>
-  <br>
+      </div>
+    <div>
+
 <% end %>

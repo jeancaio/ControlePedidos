@@ -1,5 +1,10 @@
 <div class="container">
-  <p id="notice"><%= notice %></p>
+
+  <% if @cliente.save %>
+    <div class="alert alert-success" role="alert">
+      <p id="notice"><%= notice %></p>
+    </div>
+  <% end %>
 
   <p>
     <strong>Nome:</strong>
@@ -7,12 +12,12 @@
   </p>
 
   <p>
-    <strong>Cpf:</strong>
+    <strong>CPF:</strong>
     <%= @cliente.cpf %>
   </p>
 
   <p>
-    <strong>Endereco:</strong>
+    <strong>Endereço:</strong>
     <%= @cliente.endereco %>
   </p>
 
@@ -22,7 +27,7 @@
   </p>
 
   <p>
-    <strong>Uf:</strong>
+    <strong>UF:</strong>
     <%= @cliente.uf %>
   </p>
 
@@ -31,8 +36,9 @@
     <%= @cliente.fone %>
   </p>
 
-  <div class="btn-group" >
-      <%= link_to 'Editar', edit_cliente_path(@cliente), :class => "btn btn-primary" %>
+  <div>
       <%= link_to 'Voltar', clientes_path, :class => "btn btn-primary" %>
+      <%= link_to 'Editar', edit_cliente_path(@cliente), :class => "btn btn-success" %>
+
   </div>
 </div>

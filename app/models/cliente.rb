@@ -1,5 +1,5 @@
 class Cliente < ApplicationRecord
-  has_many :pedidos
+  has_many :pedidos, dependent: :destroy
 
   validates :nome, :cpf, :endereco, :cidade, :uf, :fone, presence: true
 
