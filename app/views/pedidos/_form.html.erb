@@ -1,6 +1,9 @@
 <%= simple_form_for(@pedido) do |f| %>
-  <%= f.error_notification %>
-
+  <% @pedido.errors.full_messages.each do |message| %>
+    <div class="alert alert-danger">
+      <li><%= message%></li>
+    </div>
+  <% end %>
   <div class="form-inputs ">
     <%= f.association :cliente %>
     <hr/>
@@ -8,15 +11,13 @@
       <%= render 'item_pedido_fields', f: item_pedido %>
     <% end %>
   </div>
-
   <div class="form-actions">
     <%= link_to_add_association 'Adicionar produto', f, :itens_pedido, :class => "btn btn-success "%>
     <hr/>
   </div>
-
   <div class="form-actions">
-      <div class="pull-right">
-        <%= f.button :submit, :class => "btn-success"  %>
-      </div>
+    <div class="pull-right">
+      <%= f.button :submit, :class => "btn-success"  %>
+    </div>
   </div>
 <% end %>

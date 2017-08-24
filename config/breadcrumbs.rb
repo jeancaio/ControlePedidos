@@ -41,7 +41,6 @@ end
 
 crumb :new_pedido do
   link "Novo pedido", new_pedido_path
-  parent :pedidos
 end
 # crumb :projects
 #   link "Projects", projects_path

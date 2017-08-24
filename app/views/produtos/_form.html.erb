@@ -1,29 +1,23 @@
 <%= simple_form_for(@produto) do |f| %>
   <%= f.error_notification %>
-
   <div class="form-inputs">
     <%= f.input :descricao, label: 'Descrição' %>
-
     <div class="row">
       <div class="col-md-6">
         <%= f.input :preco, label: 'Preço' %>
       </div>
-
       <div class="col-md-6">
         <%= f.input :estoque %>
       </div>
-
       <div class="col-md-6">
-      <%= f.input :image, as: :file, label: 'Imagem' %>
-      <%= f.input :ativo %>
+        <%= f.input :image, as: :file, label: 'Imagem' %>
+        <%= f.input :ativo %>
       </div>
     </div>
-
     <div class="form-actions">
       <div class="pull-right">
         <%= f.button :submit, :class => "btn-success"%>
       </div>
     </div>
   </div>
-
 <% end %>

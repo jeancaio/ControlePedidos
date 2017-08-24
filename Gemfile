@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'rails-i18n'
 gem 'devise'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
@@ -65,6 +65,7 @@ group :development do
 
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'htmlbeautifier'
 end
 
 
