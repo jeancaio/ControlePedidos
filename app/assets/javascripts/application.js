@@ -13,6 +13,10 @@
 //= require rails-ujs
 //= require turbolinks
 //= require jquery/dist/jquery.min.js
+//= require jquery.inputmask
+//= require jquery.inputmask.extensions
+//= require jquery.inputmask.numeric.extensions
+//= require jquery.inputmask.date.extensions
 //= require select2
 //= require cocoon
 //= require_tree .

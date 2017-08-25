@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
@@ -30,23 +29,35 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# internavionalização
 gem 'rails-i18n'
+# Autenticação
 gem 'devise'
+# paginação
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
+# Forularios
 gem 'simple_form'
+# botstrap
 gem 'bootstrap-sass'
-gem 'bootstrap-sass'
+# Inserir imagen
 gem 'paperclip'
+
 gem 'audited'
 gem 'select2-rails'
-gem "cocoon"
+# adicionar os campos de produtos em pedidos
+gem 'cocoon'
+# Para pesquisas
 gem 'ransack'
-gem "gretel"
+# para rotas home>clientes>cliente....... etc
+gem 'gretel'
+# mascaramento
+gem 'jquery-inputmask-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
 
   gem 'wonder-ruby-style'
 
@@ -63,12 +74,10 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
-  gem "better_errors"
-  gem "binding_of_caller"
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'htmlbeautifier'
 end
 
-
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

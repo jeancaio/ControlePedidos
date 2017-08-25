@@ -3,12 +3,9 @@
   <head>
     <title>Controle Pedido</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
   </head>
-
   <body>
     <header>
       <% if usuario_signed_in? %>
@@ -17,10 +14,8 @@
           <%= breadcrumbs pretext: "",
                 separator: " &rsaquo; " %>
         </div>
-
       <% end %>
     </header>
-
     <%= yield %>
   </body>
 </html>
