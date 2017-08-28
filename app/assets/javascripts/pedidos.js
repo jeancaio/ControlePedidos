@@ -3,11 +3,16 @@
 $(document).on('turbolinks:load cocoon:after-insert', function() {
 
   var $rmv = $('.bt-remove-item');
+  var liberar = $('#liberar');
 
   $rmv.on('click', function(e){
     $(this).parent('.container-remote-item').parent('.remove-item').hide();
   });
 
+  liberar.on('click', function(e, status){
+
+    console.log(status);
+  });
   // $('.remove-item').on('cocoon:before-insert', function(e, insertedItem) {
   //   console.log(insertedItem);
   // });

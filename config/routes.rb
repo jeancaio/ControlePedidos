@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :pedidos
+  resources :pedidos do
+    member do
+      post :liberacao
+    end
+  end
   resources :produtos
   resources :clientes
   root 'home#index'

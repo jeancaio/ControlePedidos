@@ -1,4 +1,5 @@
 <div class="container">
+  <p id="alert"><%= alert %></p>
   <% breadcrumb :pedidos %>
   <p id="notice"><%= notice %></p>
   <h1>Pedidos</h1>
@@ -14,6 +15,7 @@
         <th><%= sort_link @q, :id, "Código" %></th>
         <th><%= sort_link @q, :cliente_nome, "Cliente" %></th>
         <th><%= sort_link @q, :cliente_cpf, "CPF" %></th>
+        <th><%= sort_link @q, :status, "Status" %></th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -23,6 +25,7 @@
           <td><%= pedido.id %></td>
           <td><%= pedido.cliente %></td>
           <td><%= pedido.cliente.cpf %></td>
+          <td><%= pedido.status %></td>
           <td>
             <%= link_to pedido, :class => "btn btn-primary btn-xs" do %>
               <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Detalhes

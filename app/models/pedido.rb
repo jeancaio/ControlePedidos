@@ -23,6 +23,10 @@ class Pedido < ApplicationRecord
     [:id_eq_or_cliente_nome_or_cliente_cpf_cont]
   end
 
+  def liberado?
+    status
+  end
+
   private
 
   def valida_quantidade_produto

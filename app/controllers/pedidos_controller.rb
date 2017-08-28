@@ -1,17 +1,17 @@
 class PedidosController < ApplicationController
-  before_action :set_pedido, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_pedido, only: %i[show edit update destroy liberacao]
 
   # GET /pedidos
   # GET /pedidos.json
   def index
     @q = Pedido.ransack(params[:q])
-    @pedidos = @q.result.includes(:cliente).paginate(:page => params[:page], :per_page => 10)
+    @pedidos = @q.result.includes(:cliente).paginate(page: params[:page], per_page: 10)
   end
 
   # GET /pedidos/1
   # GET /pedidos/1.json
   def show
+    @pedidos = Pedido.find(params[:id])
   end
 
   # GET /pedidos/new
@@ -21,8 +21,7 @@ class PedidosController < ApplicationController
   end
 
   # GET /pedidos/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /pedidos
   # POST /pedidos.json
@@ -34,6 +33,20 @@ class PedidosController < ApplicationController
         format.json { render :show, status: :created, location: @pedido }
       else
         format.html { render :new }
+        format.json { render json: @pedido.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def liberacao
+    authorize @pedido
+
+    respond_to do |format|
+      if @pedido.update(pedido_params)
+        format.html { redirect_to @pedido, notice: 'Pedido liberado' }
+        format.json { render :show, status: :ok, location: @pedido }
+      else
+        format.html { render :edit }
         format.json { render json: @pedido.errors, status: :unprocessable_entity }
       end
     end
@@ -67,13 +80,13 @@ class PedidosController < ApplicationController
 
   private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_pedido
-      @pedido = Pedido.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_pedido
+    @pedido = Pedido.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def pedido_params
-      params.require(:pedido).permit(:cliente_id, itens_pedido_attributes: [:produto_id, :_destroy])
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def pedido_params
+    params.require(:pedido).permit(:cliente_id, :status, itens_pedido_attributes: %i[produto_id _destroy])
+  end
 end
