@@ -1,8 +1,6 @@
 <nav class="navbar navbar-inverse" >
   <div class="container">
-
     <ul class="nav navbar-nav">
-
       <li>
         <a>
           <%= link_to root_path do %>
@@ -10,7 +8,6 @@
           <% end %>
         </a>
       </li>
-
       <li>
         <a>
           <%= link_to pedidos_path do %>
@@ -18,7 +15,6 @@
           <% end %>
         </a>
       </li>
-
       <li>
         <a>
           <%= link_to produtos_path do %>
@@ -26,7 +22,6 @@
           <% end %>
         </a>
       </li>
-
       <li>
         <a>
           <%= link_to clientes_path do %>
@@ -34,18 +29,19 @@
           <% end %>
         </a>
       </li>
-
     </ul>
-
     <ul class="nav navbar-nav navbar-right">
-
+      <li>
+        <a style="margin-top: 30px">
+          Olá  <%= current_usuario.email %>!
+        </a>
+      </li>
       <li>
         <a>
-          <%= link_to destroy_usuario_session_path, method: :delete do %>
-            <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout
+          <%= link_to destroy_usuario_session_path, method: :delete do%>
+            <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>  Logout
           <% end %>
         </a>
       </li>
-
     </ul>
-</nav>
+  </nav>
