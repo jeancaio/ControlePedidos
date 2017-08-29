@@ -12,10 +12,10 @@
         <%= f.input :endereco,label: 'Endereço' %>
       </div>
       <div class="col-md-4">
-        <%= f.input :cidade %>
+        <%= f.input :cidade, priority: [ "Erechim" ], collection: [ "Erechim", "Aratiba", "Barão de Cotegipe", "Três Arroios", "Gaurama"] %>
       </div>
       <div class="col-md-1">
-        <%= f.input :uf, label: 'UF', maxlength: "2" %>
+        <%= f.input :uf, label: 'UF', priority: [ "Erechim" ], collection: [ "RS", "SP", "RJ", "SC", "PR"] %>
       </div>
       <div class="col-md-6", id = "mask_phone">
         <%= f.input :fone, label: 'Fone (com DDD)', maxlength: "15" %>

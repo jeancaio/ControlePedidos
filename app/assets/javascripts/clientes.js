@@ -18,6 +18,13 @@ $(document).on('turbolinks:load', function() {
     });
 
 
-   $("#js-example-basic-single").select2();
+    $( ".cidade" ).select2({
+        theme: "bootstrap"
+    });
+
+
+
+
+
 
 });

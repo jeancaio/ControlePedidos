@@ -20,3 +20,9 @@
 //= require select2
 //= require cocoon
 //= require_tree .
+
+$(document).on('turbolinks:load', function() {
+$( "#dropdown" ).select2({
+        theme: "bootstrap"
+    });
+});

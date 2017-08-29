@@ -25,7 +25,7 @@
           <td><%= pedido.id %></td>
           <td><%= pedido.cliente %></td>
           <td><%= pedido.cliente.cpf %></td>
-          <td><%= pedido.status %></td>
+          <td><%= pedido.liberado? ? "Liberado" : "Não liberado" %></td>
           <td>
             <%= link_to pedido, :class => "btn btn-primary btn-xs" do %>
               <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Detalhes

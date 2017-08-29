@@ -71,6 +71,7 @@ class PedidosController < ApplicationController
   # DELETE /pedidos/1
   # DELETE /pedidos/1.json
   def destroy
+    authorize @pedido
     @pedido.destroy
     respond_to do |format|
       format.html { redirect_to pedidos_url, notice: 'Pedido excluido.' }
