@@ -11,8 +11,10 @@
       <% if usuario_signed_in? %>
         <%= render 'layouts/nav_bar_user' %>
         <div class="container">
-          <%= breadcrumbs pretext: "",
+          <div class="alert alert-info" role="alert">
+            <%= breadcrumbs pretext: "",
                 separator: " &rsaquo; " %>
+          </div>
         </div>
       <% end %>
     </header>

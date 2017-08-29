@@ -6,7 +6,11 @@ $(document).on('turbolinks:load cocoon:after-insert', function() {
   var liberar = $('#liberar');
 
   $rmv.on('click', function(e){
-    $(this).parent('.container-remote-item').parent('.remove-item').hide();
+    var pai = $(this).parent('.container-remote-item').parent('.remove-item')
+    pai.fadeOut();
+    setTimeout(function(){
+      pai.remove();
+    },1000);
   });
 
   liberar.on('click', function(e, status){

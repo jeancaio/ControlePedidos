@@ -31,13 +31,9 @@
             <%= link_to produto, :class => "btn btn-primary btn-xs" do %>
               <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Detalhes
             <% end %>
-          </td>
-          <td>
             <%= link_to edit_produto_path(produto), :class => "btn btn-primary btn-xs" do %>
               <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
             <% end %>
-          </td>
-          <td>
             <%= link_to produto, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs" do %>
               <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Excluir
             <% end %>

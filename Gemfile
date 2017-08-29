@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'rails-i18n'
 # Autenticação
 gem 'devise'
+
+gem 'devise-i18n'
 # paginação
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
