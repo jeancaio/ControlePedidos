@@ -1,17 +1,17 @@
 crumb :root do
-  link "Home", root_path
+  link 'Home', pedidos_path
 end
 
 crumb :pedidos do
-  link "Pedidos", pedidos_path
+  link 'Pedidos', pedidos_path
 end
 
 crumb :produtos do
-  link "Produtos", produtos_path
+  link 'Produtos', produtos_path
 end
 
 crumb :clientes do
-  link "Clientes", clientes_path
+  link 'Clientes', clientes_path
 end
 
 crumb :cliente do |cliente|
@@ -20,7 +20,7 @@ crumb :cliente do |cliente|
 end
 
 crumb :new_cliente do
-  link "Novo Cliente", new_cliente_path
+  link 'Novo Cliente', new_cliente_path
   parent :clientes
 end
 
@@ -30,7 +30,7 @@ crumb :produto do |produto|
 end
 
 crumb :new_produto do
-  link "Novo produto", new_produto_path
+  link 'Novo produto', new_produto_path
   parent :produtos
 end
 
@@ -40,7 +40,9 @@ crumb :pedido do |pedido|
 end
 
 crumb :new_pedido do
-  link "Novo pedido", new_pedido_path
+  parent :root
+  link 'Novo pedido', new_pedido_path
+  parent :pedidos
 end
 # crumb :projects
 #   link "Projects", projects_path

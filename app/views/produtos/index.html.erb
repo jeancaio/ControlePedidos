@@ -3,11 +3,17 @@
   <p id="notice"><%= notice %></p>
   <h1>Produtos</h1>
   <%= search_form_for @q do |f| %>
-    <%= f.search_field :id_eq_or_descricao_cont, class: "form-inputs", placeholder: "Buscar produto"%>
-    <button  type="submit" class="btn btn-default btn-sm">
-      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-    </button>
-  <% end %>
+    <div class="row">
+      <div class="col-md-11">
+        <%= f.search_field :id_eq_or_descricao_cont, class: "form-inputs", placeholder: "Buscar produto", class: "form-control"%>
+      </div>
+      <div class="col-md-1">
+        <button  type="submit" class="btn btn-default">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </button>
+      </div>
+    <% end %>
+  </div>
   <table class="table">
     <thead>
       <tr>
@@ -34,7 +40,7 @@
             <%= link_to edit_produto_path(produto), :class => "btn btn-primary btn-xs" do %>
               <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
             <% end %>
-            <%= link_to produto, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs" do %>
+            <%= link_to produto, method: :delete, data: { confirm: 'Tem certeza?' }, :class => "btn btn-danger btn-xs" do %>
               <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Excluir
             <% end %>
           </td>
