@@ -3,19 +3,21 @@
   <head>
     <title>Controle Pedido</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
   </head>
-
   <body>
     <header>
-
+      <%= render 'layouts/nav_bar_login' %>
     </header>
-
     <div class="container">
-      <p class="alert"><%= alert %></p>
+      <% if alert.present?%>
+        <div class="text-center m-t-lg">
+          <div class="alert alert-warning" role="alert">
+            <p class="alert"><%= alert %></p>
+          </div>
+        </div>
+      <% end %>
       <%= yield %>
     </div>
   </body>

@@ -1,7 +1,11 @@
 <div class="container">
   <p id="alert"><%= alert %></p>
   <% breadcrumb :pedidos %>
-  <p id="notice"><%= notice %></p>
+  <% if notice.present?%>
+    <div class="alert alert-success" role="alert">
+      <p id="notice"><%= notice %></p>
+    </div>
+  <% end %>
   <h1>Pedidos</h1>
   <div class="row">
     <div class="col-md-11">

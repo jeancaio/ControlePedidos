@@ -1,6 +1,10 @@
 <div class="container">
   <% breadcrumb :produtos %>
-  <p id="notice"><%= notice %></p>
+  <% if notice.present?%>
+    <div class="alert alert-success" role="alert">
+      <p id="notice"><%= notice %></p>
+    </div>
+  <% end %>
   <h1>Produtos</h1>
   <%= search_form_for @q do |f| %>
     <div class="row">
