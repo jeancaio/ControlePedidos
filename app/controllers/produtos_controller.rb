@@ -1,13 +1,13 @@
-require 'ffaker'
+
 
 class ProdutosController < ApplicationController
-  before_action :set_produto, only: [:show, :edit, :update, :destroy]
+  before_action :set_produto, only: %i[show edit update destroy]
 
   # GET /produtos
   # GET /produtos.json
   def index
     @q = Produto.ransack(params[:q])
-    @produtos = @q.result.paginate(:page => params[:page], :per_page => 10)
+    @produtos = @q.result.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /produtos/1
@@ -22,8 +22,7 @@ class ProdutosController < ApplicationController
   end
 
   # GET /produtos/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /produtos
   # POST /produtos.json
@@ -66,13 +65,14 @@ class ProdutosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_produto
-      @produto = Produto.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def produto_params
-      params.require(:produto).permit(:descricao, :preco, :ativo, :estoque, :image)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_produto
+    @produto = Produto.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def produto_params
+    params.require(:produto).permit(:descricao, :preco, :ativo, :estoque, :image)
+  end
 end
