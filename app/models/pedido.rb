@@ -27,6 +27,10 @@ class Pedido < ApplicationRecord
     status
   end
 
+  def soma_pedido
+    produtos.sum('preco')
+  end
+
   private
 
   def valida_quantidade_produto
