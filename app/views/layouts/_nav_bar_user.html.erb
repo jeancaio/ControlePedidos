@@ -2,6 +2,9 @@
   <div class="container">
     <ul class="nav navbar-nav">
       <li>
+        <div class="navv" > Store </div>
+      </li>
+      <li>
         <a>
           <%= link_to pedidos_path do %>
             <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Pedidos
@@ -18,23 +21,22 @@
       <li>
         <a>
           <%= link_to clientes_path do %>
-            <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Clientes
+            <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span> Clientes
           <% end %>
         </a>
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li>
-        <a style="margin-top: 30px">
-          Olá  <%= current_usuario.email %>!
+      <li class="user">
+        <a href="#" class="dropdown-toggle menu-topo-icone" data-toggle="dropdown" title="<%= "Autenticado como #{current_usuario.email}" %>">
+          <i class="glyphicon glyphicon-user"></i>
+          <span class="caret"></span>
         </a>
-      </li>
-      <li>
-        <a>
-          <%= link_to destroy_usuario_session_path, method: :delete do%>
-            <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>  Logout
-          <% end %>
-        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#"><%= (current_usuario.email).truncate(15) %></a></li>
+          <li><%= link_to "Alterar Senha", edit_usuario_registration_path %></li>
+          <li><%= link_to "Sair", destroy_usuario_session_path, method: 'delete' %></li>
+        </ul>
       </li>
     </ul>
   </nav>

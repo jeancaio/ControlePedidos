@@ -17,6 +17,8 @@
         <th>Imagem</th>
         <th>Código</th>
         <th>Produtos</th>
+        <th>Quantidade</th>
+        <th>Preço</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -26,6 +28,8 @@
           <td><%= image_tag item_pedido.produto.image.url(:thumb)  %></td>
           <td><%= item_pedido.produto.id %></td>
           <td><%= item_pedido.produto.descricao%></td>
+          <td><%= item_pedido.quantidade%></td>
+          <td><%= item_pedido.produto.preco%></td>
         </tr>
       <% end %>
     </tbody>

@@ -12,6 +12,8 @@
 //
 //= require rails-ujs
 //= require turbolinks
+//= require jquery/dist/jquery.min.js
+//= require bootstrap.min.js
 //= require jquery.inputmask
 //= require jquery.inputmask.extensions
 //= require jquery.inputmask.numeric.extensions
@@ -24,4 +26,5 @@ $(document).on('turbolinks:load', function() {
 $( "#dropdown" ).select2({
         theme: "bootstrap"
     });
+
 });
