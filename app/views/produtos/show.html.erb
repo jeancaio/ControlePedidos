@@ -1,31 +1,29 @@
-<div class="container">
   <% breadcrumb :produto, @produto %>
-  <% if notice.present?%>
-    <div class="alert alert-success" role="alert">
-      <p id="notice"><%= notice %></p>
-    </div>
-  <% end %>
-  <p>
-    <strong>Descrição:</strong>
-    <%= @produto.descricao %>
-  </p>
-  <p>
-    <strong>Preço:</strong>
-    <%= @produto.preco %>
-  </p>
-  <p>
-    <strong>Ativo:</strong>
-    <%= @produto.ativo %>
-  </p>
-  <p>
-    <strong>Estoque:</strong>
-    <%= @produto.estoque %>
-  </p>
-  <p>
-    <%= image_tag @produto.image.url(:medium) %>
-  </p>
-  <div>
-    <%= link_to 'Voltar', produtos_path, :class => "btn btn-primary" %>
-    <%= link_to 'Editar', edit_produto_path(@produto), :class => "btn btn-success" %>
+<% if notice.present?%>
+  <div class="alert alert-success" role="alert">
+    <p id="notice"><%= notice %></p>
   </div>
+<% end %>
+<p>
+  <strong>Descrição:</strong>
+  <%= @produto.descricao %>
+</p>
+<p>
+  <strong>Preço:</strong>
+  <%= @produto.preco %>
+</p>
+<p>
+  <strong>Ativo:</strong>
+  <%= @produto.ativo %>
+</p>
+<p>
+  <strong>Estoque:</strong>
+  <%= @produto.estoque %>
+</p>
+<p>
+  <%= image_tag @produto.image.url(:medium) %>
+</p>
+<div>
+  <%= link_to 'Voltar', produtos_path, :class => "btn btn-primary" %>
+  <%= link_to 'Editar', edit_produto_path(@produto), :class => "btn btn-success" %>
 </div>

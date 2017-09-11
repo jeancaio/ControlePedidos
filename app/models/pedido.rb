@@ -31,6 +31,22 @@ class Pedido < ApplicationRecord
     itens_pedido.inject(0) { |sum, p| sum + p.subtotal }
   end
 
+  def atualizaEstoqueDiminui
+    produtos.each do |produto|
+      item_pedido = itens_pedido.find_by(produto_id: produto)
+      produto.estoque -= item_pedido.quantidade
+      produto.save
+    end
+  end
+
+  def atualizaEstoqueAumenta
+    produtos.each do |produto|
+      item_pedido = itens_pedido.find_by(produto_id: produto)
+      produto.estoque += item_pedido.quantidade
+      produto.save
+    end
+  end
+
   private
 
   def valida_quantidade_produto

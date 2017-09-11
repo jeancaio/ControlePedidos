@@ -30,6 +30,7 @@ class PedidosController < ApplicationController
       if @pedido.save
         format.html { redirect_to @pedido, notice: 'Pedido criado' }
         format.json { render :show, status: :created, location: @pedido }
+        @pedido.atualizaEstoqueDiminui
       else
         format.html { render :new }
         format.json { render json: @pedido.errors, status: :unprocessable_entity }
@@ -54,12 +55,14 @@ class PedidosController < ApplicationController
   # PATCH/PUT /pedidos/1
   # PATCH/PUT /pedidos/1.json
   def update
+    @pedido.atualizaEstoqueAumenta
     @pedido.itens_pedido.destroy_all
     respond_to do |format|
       if @pedido.update(pedido_params)
 
         format.html { redirect_to @pedido, notice: 'Pedido atualizado' }
         format.json { render :show, status: :ok, location: @pedido }
+        @pedido.atualizaEstoqueDiminui
       else
         format.html { render :edit }
         format.json { render json: @pedido.errors, status: :unprocessable_entity }
@@ -71,6 +74,7 @@ class PedidosController < ApplicationController
   # DELETE /pedidos/1.json
   def destroy
     authorize @pedido
+    @pedido.atualizaEstoqueAumenta
     @pedido.destroy
     respond_to do |format|
       format.html { redirect_to pedidos_url, notice: 'Pedido excluído' }

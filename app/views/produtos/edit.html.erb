@@ -1,11 +1,6 @@
-<div class="container">
   <% breadcrumb :produto, @produto %>
-  
-  <h1>Editar Produto</h1>
-
-  <%= render 'form', produto: @produto %>
-
-  <div class="btn-group">
-    <%= link_to 'Voltar', produtos_path, :class => "btn btn-primary" %>
-  </div>
+<h1>Editar Produto</h1>
+<%= render 'form', produto: @produto %>
+<div class="btn-group">
+  <%= link_to 'Voltar', produtos_path, :class => "btn btn-primary" %>
 </div>
