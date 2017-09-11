@@ -1,6 +1,5 @@
 class PedidosController < ApplicationController
   before_action :set_pedido, only: %i[show edit update destroy liberacao]
-
   # GET /pedidos
   # GET /pedidos.json
   def index
@@ -29,7 +28,7 @@ class PedidosController < ApplicationController
     @pedido = Pedido.new(pedido_params)
     respond_to do |format|
       if @pedido.save
-        format.html { redirect_to @pedido, notice: 'Pedido criado.' }
+        format.html { redirect_to @pedido, notice: 'Pedido criado' }
         format.json { render :show, status: :created, location: @pedido }
       else
         format.html { render :new }
@@ -59,7 +58,7 @@ class PedidosController < ApplicationController
     respond_to do |format|
       if @pedido.update(pedido_params)
 
-        format.html { redirect_to @pedido, notice: 'Pedido atualizado.' }
+        format.html { redirect_to @pedido, notice: 'Pedido atualizado' }
         format.json { render :show, status: :ok, location: @pedido }
       else
         format.html { render :edit }
@@ -74,7 +73,7 @@ class PedidosController < ApplicationController
     authorize @pedido
     @pedido.destroy
     respond_to do |format|
-      format.html { redirect_to pedidos_url, notice: 'Pedido excluido.' }
+      format.html { redirect_to pedidos_url, notice: 'Pedido excluído' }
       format.json { head :no_content }
     end
   end
@@ -88,6 +87,6 @@ class PedidosController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def pedido_params
-    params.require(:pedido).permit(:quantidade, :cliente_id, :status, itens_pedido_attributes: %i[produto_id _destroy])
+    params.require(:pedido).permit(:cliente_id, :status, itens_pedido_attributes: [:quantidade, %i[produto_id _destroy]])
   end
 end

@@ -6,7 +6,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
+  <body class="tudo">
     <header>
       <% if usuario_signed_in? %>
         <%= render 'layouts/nav_bar_user' %>
@@ -18,7 +18,7 @@
         </div>
       <% end %>
     </header>
-    <div class="container">
+    <div class="container" >
       <%= yield %>
     </div>
   </body>

@@ -1,6 +1,4 @@
-<div class="container">
   <% breadcrumb :new_pedido %>
-  <h1>Novos Pedido</h1>
-  <%= render 'form', pedido: @pedido %>
-  <%= link_to 'Voltar', pedidos_path, :class => "btn btn-primary" %>
-</div>
+<h1>Novos Pedido</h1>
+<%= render 'form', pedido: @pedido %>
+<%= link_to 'Voltar', pedidos_path, :class => "btn btn-primary" %>

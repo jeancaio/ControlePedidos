@@ -28,7 +28,7 @@ class Pedido < ApplicationRecord
   end
 
   def soma_pedido
-    produtos.sum('preco')
+    itens_pedido.inject(0) { |sum, p| sum + p.subtotal }
   end
 
   private

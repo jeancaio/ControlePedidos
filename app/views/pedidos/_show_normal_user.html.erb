@@ -1,45 +1,45 @@
-<div class="container">
-  <% breadcrumb :pedido, @pedido %>
-  <% if notice.present?%>
-    <div class="alert alert-success" role="alert">
-      <p id="notice"><%= notice %></p>
-    </div>
-  <% end %>
-  <p>
-    <strong>Cliente:</strong>
-    <%= @pedido.cliente %> <br>
-    <strong>Status:</strong>
-    <%= @pedido.liberado? ? "Liberado" : "Não liberado" %>
-  </p>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Imagem</th>
-        <th>Código</th>
-        <th>Produtos</th>
-        <th>Quantidade</th>
-        <th>Preço</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @pedido.itens_pedido.each do |item_pedido| %>
-        <tr>
-          <td><%= image_tag item_pedido.produto.image.url(:thumb)  %></td>
-          <td><%= item_pedido.produto.id %></td>
-          <td><%= item_pedido.produto.descricao%></td>
-          <td><%= item_pedido.quantidade%></td>
-          <td><%= item_pedido.produto.preco%></td>
-        </tr>
-      <% end %>
-    </tbody>
-    <tfoot>
-      <th colspan="3"></th>
-      <th>Total</th>
-      <td><%= @pedido.soma_pedido %></td>
-    </tfoot>
-  </table>
-  <div >
-    <%= link_to 'Voltar', pedidos_path, :class => "btn btn-primary"  %>
-    <%= link_to 'Editar', edit_pedido_path(@pedido), :class => "btn btn-success"  %>
+<% breadcrumb :pedido, @pedido %>
+<% if notice.present?%>
+  <div class="alert alert-success" role="alert">
+    <p id="notice"><%= notice %></p>
   </div>
+<% end %>
+<p>
+  <strong>Cliente:</strong>
+  <%= @pedido.cliente %> <br>
+  <strong>Status:</strong>
+  <%= @pedido.liberado? ? "Liberado" : "Não liberado" %>
+</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Imagem</th>
+      <th>Código</th>
+      <th>Produtos</th>
+      <th>Quantidade</th>
+      <th>Preço un.</th>
+      <th>Subtotal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @pedido.itens_pedido.each do |item_pedido| %>
+      <tr>
+        <td><%= image_tag item_pedido.produto.image.url(:thumb)  %></td>
+        <td><%= item_pedido.produto.id %></td>
+        <td><%= item_pedido.produto.descricao%></td>
+        <td><%= item_pedido.quantidade%></td>
+        <td><%= item_pedido.produto.preco%></td>
+        <td><%= item_pedido.subtotal %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <th colspan="4"></th>
+    <th>Total:</th>
+    <td><%= @pedido.soma_pedido %></td>
+  </tfoot>
+</table>
+<div >
+  <%= link_to 'Voltar', pedidos_path, :class => "btn btn-primary"  %>
+  <%= link_to 'Editar', edit_pedido_path(@pedido), :class => "btn btn-success"  %>
 </div>

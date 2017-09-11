@@ -1,8 +1,6 @@
-<div class="container">
   <% breadcrumb :pedido, @pedido %>
-  <h1>Editar Pedido</h1>
-  <%= render 'form', pedido: @pedido %>
-  <div class="btn-group">
-    <%= link_to 'Voltar', pedidos_path, :class => "btn btn-primary" %>
-  </div>
+<h1>Editar Pedido</h1>
+<%= render 'form', pedido: @pedido %>
+<div class="btn-group">
+  <%= link_to 'Voltar', pedidos_path, :class => "btn btn-primary" %>
 </div>

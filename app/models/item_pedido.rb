@@ -4,4 +4,8 @@ class ItemPedido < ApplicationRecord
 
   validates :produto_id, presence: true
   #  validates_numericality_of :quantidade, greater_than0
+
+  def subtotal
+    produto.preco * quantidade
+  end
 end
