@@ -88,6 +88,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+<<<<<<< HEAD
 
   config.action_mailer.default_url_options = { :host => 'https://safe-brushlands-58196.herokuapp.com' }
 
@@ -107,4 +108,6 @@ Rails.application.configure do
     password: ENV["GMAIL_PASSWORD"]
   }
 
+=======
+>>>>>>> parent of 3bd316c... email confirmação
 end

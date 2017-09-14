@@ -12,10 +12,17 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
+<<<<<<< HEAD
   config.mailer_sender = "confirm.email63@gmail.com"
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
+=======
+  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+
+  # Configure the class responsible to send e-mails.
+   config.mailer = 'Devise::Mailer'
+>>>>>>> parent of 3bd316c... email confirmação
 
   # Configure the parent class responsible to send e-mails.
   # config.parent_mailer = 'ActionMailer::Base'

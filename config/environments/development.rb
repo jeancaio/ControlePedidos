@@ -33,7 +33,7 @@ Rails.application.configure do
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
-
+config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
@@ -52,6 +52,7 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
+<<<<<<< HEAD
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.perform_deliveries = true
   # # config.action_mailer.raise_delivery_errors = false
@@ -68,5 +69,8 @@ Rails.application.configure do
     password: ENV["GMAIL_PASSWORD"]
   }
 
+=======
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+>>>>>>> parent of 3bd316c... email confirmação
 
 end
