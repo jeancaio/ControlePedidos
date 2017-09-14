@@ -4,7 +4,7 @@
     <%= f.input :descricao, label: 'Descrição' %>
     <div class="row">
       <div class="col-md-6">
-        <%= f.input :preco, label: 'Preço' %>
+        <%= f.input :preco, label: 'Preço', input_html: {class: "mask_money"}%>
       </div>
       <div class="col-md-6">
         <%= f.input :estoque %>

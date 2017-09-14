@@ -13,12 +13,18 @@
     <div class="container">
       <% if alert.present?%>
         <div class="text-center m-t-lg">
-          <div class="alert alert-warning" role="alert">
+          <div class="alert alert-warning mensagem" role="alert">
             <p class="alert"><%= alert %></p>
           </div>
         </div>
       <% end %>
       <%= yield %>
+      <div class="text-center m-t-lg">
+        <br>
+        <br>
+        <br>
+        <strong>Copyright</strong> Jean Andreolla &copy; <%= Date.today.year %>
+      </div>
     </div>
   </body>
 </html>

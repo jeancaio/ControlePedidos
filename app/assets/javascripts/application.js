@@ -27,4 +27,11 @@ $( "#dropdown" ).select2({
         theme: "bootstrap"
     });
 
+
+var mensagem = $('.mensagem');
+
+setTimeout(function(){
+  mensagem.fadeOut();
+}, 5000);
+
 });

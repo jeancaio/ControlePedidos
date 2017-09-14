@@ -1,6 +1,6 @@
 <%= simple_form_for(@pedido) do |f| %>
   <% @pedido.errors.full_messages.each do |message| %>
-    <div class="alert alert-danger">
+    <div class="alert alert-danger mensagem">
       <li><%= message%></li>
     </div>
   <% end %>
