@@ -1,8 +1,4 @@
 crumb :root do
-  link 'Home', pedidos_path
-end
-
-crumb :pedidos do
   link 'Pedidos', pedidos_path
 end
 
@@ -36,13 +32,13 @@ end
 
 crumb :pedido do |pedido|
   link pedido.id, pedido
-  parent :pedidos
+  parent :root
 end
 
 crumb :new_pedido do
   parent :root
   link 'Novo pedido', new_pedido_path
-  parent :pedidos
+  parent :root
 end
 # crumb :projects
 #   link "Projects", projects_path

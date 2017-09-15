@@ -33,7 +33,7 @@ Rails.application.configure do
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
-config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
@@ -52,25 +52,19 @@ config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-<<<<<<< HEAD
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
   config.action_mailer.perform_deliveries = true
   # # config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.default charset: 'utf-8'
   config.action_mailer.delivery_method = :smtp
 
- config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
     port: 587,
-    domain: ENV["GMAIL_DOMAIN"],
-    authentication: "plain",
+    domain: ENV['GMAIL_DOMAIN'],
+    authentication: 'plain',
     enable_starttls_auto: true,
-    user_name: ENV["GMAIL_USERNAME"],
-    password: ENV["GMAIL_PASSWORD"]
+    user_name: ENV['GMAIL_USERNAME'],
+    password: ENV['GMAIL_PASSWORD']
   }
-
-=======
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
->>>>>>> parent of 3bd316c... email confirmação
-
 end

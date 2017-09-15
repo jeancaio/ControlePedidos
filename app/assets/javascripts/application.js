@@ -23,15 +23,24 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
-$( "#dropdown" ).select2({
-        theme: "bootstrap"
+  $( "#dropdown" ).select2({
+      theme: "bootstrap"
     });
 
+  var mensagem = $('.mensagem');
+  setTimeout(function(){
+    mensagem.fadeOut();
+  }, 5000);
 
-var mensagem = $('.mensagem');
+  var table = $('.table').find('tbody > tr');
+  table.on('mouseenter mouseleave', function(){
+    $(this).toggleClass('td');
+  });
 
-setTimeout(function(){
-  mensagem.fadeOut();
-}, 5000);
+
+  var app = $('.table').find('tbody')
+  app.css('display', 'none');
+  app.fadeIn(500);
+
 
 });

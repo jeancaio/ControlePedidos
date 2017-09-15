@@ -11,19 +11,16 @@ $(document).on('turbolinks:load', function() {
   //Nono digito
   fone.blur(function(event){
     if($(this).val().length == 15){ // Celular com 9 dígitos + 2 dígitos DDD e 4 da máscara
-          $('#fone').inputmask('(00) 00000-0009');
-       } else {
-          $('#fone').inputmask('(00) 0000-00009');
-       }
+        $('#fone').inputmask('(00) 00000-0009');
+      } else {
+        $('#fone').inputmask('(00) 0000-00009');
+      }
     });
 
 
-    $( ".cidade" ).select2({
-        theme: "bootstrap"
-    });
-
-
-
+  $( ".cidade" ).select2({
+      theme: "bootstrap"
+  });
 
 
 

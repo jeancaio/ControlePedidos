@@ -11,14 +11,14 @@
       <% if usuario_signed_in? %>
         <%= render 'layouts/nav_bar_user' %>
         <div class="container">
-          <div class="alert alert-info" role="alert">
+          <div class="breadcrumbs" >
             <%= breadcrumbs pretext: "",
                 separator: " &rsaquo; " %>
           </div>
         </div>
       <% end %>
     </header>
-    <div class="container" >
+    <div class="container principal" >
       <%= yield %>
       <div class="text-center m-t-lg">
         <strong>Copyright</strong> Jean Andreolla &copy; <%= Date.today.year %>
