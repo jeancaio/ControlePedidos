@@ -32,9 +32,13 @@ $(document).on('turbolinks:load', function() {
     mensagem.fadeOut();
   }, 5000);
 
-  var table = $('.table').find('tbody > tr');
+  var table = $('.table').find('tbody > tr[data-link]');
   table.on('mouseenter mouseleave', function(){
     $(this).toggleClass('td');
+  });
+
+  table.on('click', function(){
+    window.location = $(this).data("link")
   });
 
 

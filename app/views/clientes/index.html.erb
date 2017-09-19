@@ -34,7 +34,7 @@
   </thead>
   <tbody>
     <% @clientes.each do |cliente| %>
-      <tr>
+      <tr data-link="<%= cliente_path(cliente) %>">
         <td><%= cliente.nome %></td>
         <td><%= cliente.cpf %></td>
         <td><%= cliente.endereco %></td>

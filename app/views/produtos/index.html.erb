@@ -30,7 +30,7 @@
   </thead>
   <tbody>
     <% @produtos.each do |produto| %>
-      <tr>
+      <tr data-link="<%= produto_path(produto) %>">
         <td><%= image_tag produto.image.url(:thumb)  %></td>
         <td><%= produto.id %></td>
         <td><%= produto.descricao %></td>

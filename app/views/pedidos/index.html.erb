@@ -25,16 +25,18 @@
       <th><%= sort_link @q, :cliente_nome, "Cliente" %></th>
       <th><%= sort_link @q, :cliente_cpf, "CPF" %></th>
       <th><%= sort_link @q, :status, "Status" %></th>
+      <th><%= sort_link @q, :created_at, "Data" %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
   <tbody>
     <% @pedidos.each do |pedido| %>
-      <tr>
+      <tr data-link="<%= pedido_path(pedido) %>">
         <td><%= pedido.id %></td>
         <td><%= pedido.cliente %></td>
         <td><%= pedido.cliente.cpf %></td>
         <td><%= pedido.liberado? ? "Liberado" : "Não liberado" %></td>
+        <td><%= pedido.created_at.to_s('%d/%m/%Y %H:%M') %> </td>
         <td>
           <%= link_to pedido, :class => "btn btn-primary btn-xs" do %>
             <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Detalhes

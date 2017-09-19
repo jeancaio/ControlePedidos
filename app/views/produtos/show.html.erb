@@ -4,26 +4,34 @@
     <p id="notice"><%= notice %></p>
   </div>
 <% end %>
-<p>
-  <strong>Descrição:</strong>
-  <%= @produto.descricao %>
-</p>
-<p>
-  <strong>Preço:</strong>
-  <%= @produto.preco %>
-</p>
-<p>
-  <strong>Ativo:</strong>
-  <%= @produto.ativo %>
-</p>
-<p>
-  <strong>Estoque:</strong>
-  <%= @produto.estoque %>
-</p>
-<p>
-  <%= image_tag @produto.image.url(:medium) %>
-</p>
-<div>
-  <%= link_to 'Voltar', produtos_path, :class => "btn btn-primary" %>
-  <%= link_to 'Editar', edit_produto_path(@produto), :class => "btn btn-success" %>
+<div class="show">
+  <div class="row">
+    <div class="col-md-5">
+      <p>
+        <strong>Descrição:</strong>
+        <%= @produto.descricao %>
+      </p>
+      <p>
+        <strong>Preço:</strong>
+        <%= @produto.preco %>
+      </p>
+      <p>
+        <strong>Ativo:</strong>
+        <%= @produto.ativo %>
+      </p>
+      <p>
+        <strong>Estoque:</strong>
+        <%= @produto.estoque %>
+      </p>
+    </div>
+    <div class="col-md-4">
+      <p>
+        <%= image_tag @produto.image.url(:medium) %>
+      </p>
+    </div>
+  </div>
+  <div>
+    <%= link_to 'Voltar', produtos_path, :class => "btn btn-primary" %>
+    <%= link_to 'Editar', edit_produto_path(@produto), :class => "btn btn-success" %>
+  </div>
 </div>

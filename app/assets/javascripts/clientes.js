@@ -22,6 +22,8 @@ $(document).on('turbolinks:load', function() {
       theme: "bootstrap"
   });
 
+  
+
 
 
 });

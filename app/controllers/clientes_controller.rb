@@ -27,7 +27,7 @@ class ClientesController < ApplicationController
 
     respond_to do |format|
       if @cliente.save
-        format.html { redirect_to @cliente, notice: 'Cliente criado.' }
+        format.html { redirect_to @cliente, notice: 'Cliente criado' }
         format.json { render :show, status: :created, location: @cliente }
       else
         format.html { render :new }
@@ -41,7 +41,7 @@ class ClientesController < ApplicationController
   def update
     respond_to do |format|
       if @cliente.update(cliente_params)
-        format.html { redirect_to @cliente, notice: 'Cliente atualizado.' }
+        format.html { redirect_to @cliente, notice: 'Cliente atualizado' }
         format.json { render :show, status: :ok, location: @cliente }
       else
         format.html { render :edit }
@@ -55,7 +55,7 @@ class ClientesController < ApplicationController
   def destroy
     @cliente.destroy
     respond_to do |format|
-      format.html { redirect_to clientes_url, notice: 'Cliente excluido.' }
+      format.html { redirect_to clientes_url, notice: 'Cliente excluído' }
       format.json { head :no_content }
     end
   end

@@ -1,5 +1,5 @@
 crumb :root do
-  link 'Pedidos', pedidos_path
+  link 'Home', pedidos_path
 end
 
 crumb :produtos do
